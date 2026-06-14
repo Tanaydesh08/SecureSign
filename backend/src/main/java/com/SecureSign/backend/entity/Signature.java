@@ -25,5 +25,9 @@ public class Signature {
 
     @ManyToOne
     @JoinColumn(name = "document_id")
+    private Document document;
+
+    @ManyToOne
+    @JoinColumn(name = "signer_id")
     private User signer;
 }
