@@ -41,7 +41,7 @@ public class JwtService {
         return claims.getSubject();
     }
 
-    public boolean iaTokenValid(String token, String email){
+    public boolean isTokenValid(String token, String email){
         return extractEmail(token).equals(email);
     }
 }

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@600&family=Great+Vibes&family=Parisienne&family=Sacramento&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #111827;
+  background: #F4F7FB;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.font-signature-dancing {
+  font-family: "Dancing Script", "Great Vibes", "Brush Script MT", cursive;
+}
+
+.font-signature-allura {
+  font-family: "Allura", "Dancing Script", "Brush Script MT", cursive;
+}
+
+.font-signature-great-vibes {
+  font-family: "Great Vibes", "Dancing Script", "Brush Script MT", cursive;
+}
+
+.font-signature-parisienne {
+  font-family: "Parisienne", "Dancing Script", "Brush Script MT", cursive;
+}
+
+.font-signature-sacramento {
+  font-family: "Sacramento", "Dancing Script", "Brush Script MT", cursive;
+}

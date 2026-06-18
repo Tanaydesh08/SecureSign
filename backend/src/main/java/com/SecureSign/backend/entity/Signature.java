@@ -20,6 +20,7 @@ public class Signature {
     private Float xCoordinate;
     private Float yCoordinate;
     private String signatureImage;
+    private String signatureFont;
     private String status;
     private LocalDateTime signedAt;
 

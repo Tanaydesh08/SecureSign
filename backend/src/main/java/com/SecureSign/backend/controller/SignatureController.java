@@ -1,8 +1,10 @@
 package com.SecureSign.backend.controller;
 
+import com.SecureSign.backend.dto.SignatureRequest;
 import com.SecureSign.backend.entity.Signature;
 import com.SecureSign.backend.service.SignatureService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,28 +17,28 @@ public class SignatureController {
 
     @PostMapping
     public Signature addSignature(
-            @RequestParam Long documentId,
-            @RequestParam Long userId,
-            @RequestParam Integer pageNumber,
-            @RequestParam Float xCoordinate,
-            @RequestParam Float yCoordinate,
-            @RequestParam String signatureImage
-    ){
+            @RequestBody SignatureRequest request,
+            Authentication authentication
+    ) {
         return signatureService.addSignature(
-                documentId,
-                userId,
-                pageNumber,
-                xCoordinate,
-                yCoordinate,
-                signatureImage
+                request.getDocumentId(),
+                request.getUserId(),
+                authentication != null ? authentication.getName() : null,
+                request.getPageNumber(),
+                request.getXCoordinate(),
+                request.getYCoordinate(),
+                request.getSignatureImage(),
+                request.getSignatureFont()
         );
     }
+
     @GetMapping("/{documentId}")
-    public List<Signature> getSignature(
+    public List<Signature> getSignatures(
             @PathVariable Long documentId
     ) {
         return signatureService.getSignatureByDocument(documentId);
     }
+
     @PutMapping("/{id}/status")
     public Signature updateStatus(
             @PathVariable Long id,
